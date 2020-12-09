@@ -199,46 +199,46 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(width, height) {
-  let kvadr = '';
-  for (let i = 0; i < height; i += 1) {
-    let str = '';
-    for (let wid = 0; wid < width; wid += 1) {
-      if ((i === 0) && (height - 1 === i)) {
-        if (wid === 0) {
-          if (i === 0) {
-            str += '┌';
-            continue;
-          } else {
-            str += '└';
-            continue;
-          }
-        } else if (wid === width - 1) {
-          if (i === 0) {
-            str += "┐\n'";
-            continue;
-          } else {
-            str += "┘\n'";
-            continue;
-          }
-        } else {
-          str += '─';
-          continue;
-        }
-      } else if (wid === 0) {
-        str += '│';
-        continue;
-      } else if (wid === width - 1) {
-        str += "│\n'";
-        continue;
-      } else {
-        str += ' ';
-      }
-    }
-    kvadr += str;
-  }
-  return kvadr;
-}
+function getRectangleString(/* width, height */) { throw new Error('Not implemented'); }
+//   let kvadr = '';
+//   for (let i = 0; i < height; i += 1) {
+//     let str = '';
+//     for (let wid = 0; wid < width; wid += 1) {
+//       if ((i === 0) && (height - 1 === i)) {
+//         if (wid === 0) {
+//           if (i === 0) {
+//             str += '┌';
+//             continue;
+//           } else {
+//             str += '└';
+//             continue;
+//           }
+//         } else if (wid === width - 1) {
+//           if (i === 0) {
+//             str += "┐\n'";
+//             continue;
+//           } else {
+//             str += "┘\n'";
+//             continue;
+//           }
+//         } else {
+//           str += '─';
+//           continue;
+//         }
+//       } else if (wid === 0) {
+//         str += '│';
+//         continue;
+//       } else if (wid === width - 1) {
+//         str += "│\n'";
+//         continue;
+//       } else {
+//         str += ' ';
+//       }
+//     }
+//     kvadr += str;
+//   }
+//   return kvadr;
+// }
 
 /**
  * Encode specified string with ROT13 cipher
