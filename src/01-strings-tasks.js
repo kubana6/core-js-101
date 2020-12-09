@@ -208,22 +208,29 @@ function getRectangleString(width, height) {
         if (wid === 0) {
           if (i === 0) {
             str += '┌';
+            continue;
           } else {
             str += '└';
+            continue;
           }
         } else if (wid === width - 1) {
           if (i === 0) {
             str += "┐\n'";
+            continue;
           } else {
             str += "┘\n'";
+            continue;
           }
         } else {
           str += '─';
+          continue;
         }
       } else if (wid === 0) {
         str += '│';
+        continue;
       } else if (wid === width - 1) {
         str += "│\n'";
+        continue;
       } else {
         str += ' ';
       }
@@ -275,8 +282,11 @@ function encodeToRot13(str) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value = []) {
+  if (value === null) {
+    return value !== null;
+  }
+  return value.length > 0;
 }
 
 /**
